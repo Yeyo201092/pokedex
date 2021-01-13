@@ -1,7 +1,14 @@
 package com.teambravos.pokedex.persistence.entity;
 
 import javax.persistence.*;
-
+/**
+ *
+ * Pokemon es la entidad principal que usaremos en esta aplicacion
+ *
+ *
+ * @author valeria Esquivel
+ * @since   13-01-2021
+ */
 @Entity
 @Table(name = "pokemons")
 public class Pokemon {
