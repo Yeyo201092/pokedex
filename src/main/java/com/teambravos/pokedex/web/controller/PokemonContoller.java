@@ -41,4 +41,15 @@ public class PokemonContoller {
                 .map(pokemon -> new ResponseEntity<>(pokemon,HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable("id") int pokemonId){
+        if(pokemonService.delete(pokemonId)){
+            return new ResponseEntity(HttpStatus.OK);
+        }else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
 }
+
+
