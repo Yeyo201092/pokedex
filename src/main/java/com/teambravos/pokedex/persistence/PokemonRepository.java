@@ -10,6 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+/**
+ * PokemonRepository implementa los metodos de la interfaz PokemonRepositoryI
+ * Tambien utiliza los metodos de PokemonCrudRepository y de PokemonMapper
+ * @author  Valeria Esquivel
+ * @since   13-01-2021
+ * */
+
 
 @Repository
 public class PokemonRepository implements PokemonRepositoryI {

@@ -9,10 +9,7 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,12 +40,25 @@ public class PokemonContoller {
     }
 
     @GetMapping("/delete/{id}")
+    @ApiOperation("Delete a Pokemon with an Id")
+    @ApiResponses({
+            @ApiResponse(code = 200,message = "ok"),
+            @ApiResponse(code = 404,message = "Pokemon Not Found"),
+    })
     public ResponseEntity delete(@PathVariable("id") int pokemonId){
         if(pokemonService.delete(pokemonId)){
             return new ResponseEntity(HttpStatus.OK);
         }else {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
+    }
+
+
+    @PostMapping("/save")
+    @ApiOperation("Delete a Pokemon with an Id")
+    @ApiResponse(code = 201,message = "created")
+    public ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemon) {
+        return new ResponseEntity<>(pokemonService.save(pokemon), HttpStatus.CREATED);
     }
 }
 

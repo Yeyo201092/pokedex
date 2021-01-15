@@ -11,7 +11,7 @@ import java.util.Date;
 @Component
 public class JWUtil {
 
-        private static final String  key= "Pokemon";
+        private static final String  key= "pokemon";
 
 
         public String generateToken(UserDetails userDetails){
@@ -20,7 +20,7 @@ public class JWUtil {
                     .signWith(SignatureAlgorithm.HS256, key).compact();
         }
 
-        public boolean ValidarToken(String token, UserDetails userDetails){
+        public boolean validarToken(String token, UserDetails userDetails){
             return userDetails.getUsername().equals(extraerUsuario(token)) && !tokenexpirado(token);
         }
 
