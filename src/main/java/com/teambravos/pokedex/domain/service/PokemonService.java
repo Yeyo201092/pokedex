@@ -7,13 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
+/**
+ * PokemonServices es una clase de tipo Service utilizada para implementar el CRUD de pokemons
+ * En esta clase tambien se emplean los metodos de la interfaz PokemonRepositoryI
+ *
+ *
+ * @author  Valeria Esquivel
+ * @since   13-01-2021
+ * */
 
 @Service
 public class PokemonService {
+
     @Autowired
     private PokemonRepositoryI pokemonRepository;
 
-    @GetMapping("/all")
+
     public List<PokemonI> getAll() {
 
         return pokemonRepository.getAll();

@@ -43,6 +43,11 @@ public class PokemonContoller {
     }
 
     @GetMapping("/delete/{id}")
+    @ApiOperation("Delete a Pokemon with an Id")
+    @ApiResponses({
+            @ApiResponse(code = 200,message = "ok"),
+            @ApiResponse(code = 404,message = "Pokemon Not Found"),
+    })
     public ResponseEntity delete(@PathVariable("id") int pokemonId){
         if(pokemonService.delete(pokemonId)){
             return new ResponseEntity(HttpStatus.OK);
@@ -51,6 +56,7 @@ public class PokemonContoller {
         }
     }
 
+<<<<<<< HEAD
     @PostMapping("/save")
     public  ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemonI){
         return new ResponseEntity<>(pokemonService.save(pokemonI), HttpStatus.CREATED);
@@ -63,6 +69,14 @@ public class PokemonContoller {
        return pokemonService.getPokemon(pokemonid)
                .map(pokemonI1 -> new ResponseEntity<>(pokemonService.save(pokemonI),HttpStatus.OK))
                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+=======
+
+    @PostMapping("/save")
+    @ApiOperation("Delete a Pokemon with an Id")
+    @ApiResponse(code = 201,message = "created")
+    public ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemon) {
+        return new ResponseEntity<>(pokemonService.save(pokemon), HttpStatus.CREATED);
+>>>>>>> 7f54459debb42763fc97cb759d20927c3b88507f
     }
 }
 

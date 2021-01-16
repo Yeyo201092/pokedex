@@ -8,7 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * PokemonI sse utilizara para hacer el mapper junto con la clase Pokemon
+ *
+ *
+ * @author  Valeria Esquivel
+ * @since   13-01-2021
+ * */
+
 public class PokemonI {
+    //Atributos de la clase
     private Integer pokemonId;
     private String name;
     private String type;
