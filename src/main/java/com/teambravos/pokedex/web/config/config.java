@@ -9,6 +9,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+
+
+/**
+ * informacion de los controladores
+ *
+ * @author Luis Alberto
+ * @Since 14/07/2021
+ */
 public class config {
     @Bean
     public Docket api(){

@@ -18,6 +18,16 @@ import com.teambravos.pokedex.domain.dto.AuthResponse;
 
 @RestController
 @RequestMapping("/auth")
+
+
+/**
+ * Controlaor Principal para incio de sesion dentro de la api aqui se validara la informacion
+ * de jwt
+ *
+ *
+ * @autor Luis Alberto Vazquez
+ * @since 14/01/2021
+ */
 public class AuthController {
 
 
