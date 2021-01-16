@@ -13,21 +13,21 @@ package com.teambravos.pokedex.domain.dto;
 public class AuthRequest {
 
     private String username;
-    private String Password;
+    private String password;
 
-    public String getUsarname() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsarname(String usarname) {
-        username = usarname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 }

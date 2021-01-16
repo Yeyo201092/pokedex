@@ -26,21 +26,18 @@ public class AuthController {
 
     @Autowired
     private PokemonUserService pokemonUserService;
-
     @Autowired
-    private JWUtil jwUtil;
-
+    private JWUtil jwtUtil;
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthResponse> createToken(@RequestBody AuthRequest request){
 
-        try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsarname(),request.getPassword()));
-            UserDetails userDetails = pokemonUserService.loadUserByUsername(request.getUsarname());
-            String jwt= jwUtil.generateToken(userDetails);
+        try{
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+            UserDetails userDetails = pokemonUserService.loadUserByUsername(request.getUsername());
+            String jwt = jwtUtil.generateToken(userDetails);
 
             return new ResponseEntity<>(new AuthResponse(jwt), HttpStatus.OK);
-
         }catch(BadCredentialsException e){
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }

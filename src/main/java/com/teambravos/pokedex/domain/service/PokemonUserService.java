@@ -15,6 +15,6 @@ public class PokemonUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User("user","{noop}pokemon", new ArrayList<>());
+        return new User("user","{noop}pokemos", new ArrayList<>());
     }
 }
