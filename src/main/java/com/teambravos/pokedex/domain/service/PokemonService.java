@@ -20,6 +20,8 @@ public class PokemonService {
 
     }
 
+
+
     public Optional<PokemonI> getPokemon(int pokemonId) {
         return pokemonRepository.getPokemon(pokemonId);
     }
@@ -28,6 +30,8 @@ public class PokemonService {
         return pokemonRepository.save(pokemon);
     }
 
+
+
     public boolean delete(int pokemonId) {
         return getPokemon(pokemonId).map(pokemon ->
         {
@@ -35,4 +39,6 @@ public class PokemonService {
             return true;
         }).orElse(false);
     }
+
+
 }

@@ -26,6 +26,7 @@ public class PokemonRepository implements PokemonRepositoryI {
         return mapper.toPokemons(pokemonsList);
     }
 
+
     @Override
     public Optional<PokemonI> getPokemon(int pokemonId) {
         return pokemonCrudRepository.findById(pokemonId).map(pokemon -> mapper.toPokemonI(pokemon));
@@ -36,6 +37,8 @@ public class PokemonRepository implements PokemonRepositoryI {
         Pokemon pokemonSave = mapper.toPokemon(pokemon);
         return mapper.toPokemonI(pokemonCrudRepository.save(pokemonSave));
     }
+
+
 
     @Override
     public void delete(int pokemonId) {

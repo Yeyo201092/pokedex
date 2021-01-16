@@ -3,18 +3,18 @@ package com.teambravos.pokedex.web.controller;
 
 import com.teambravos.pokedex.domain.service.PokemonI;
 import com.teambravos.pokedex.domain.service.PokemonService;
+import com.teambravos.pokedex.persistence.entity.Pokemon;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pokemons")
@@ -49,6 +49,20 @@ public class PokemonContoller {
         }else {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PostMapping("/save")
+    public  ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemonI){
+        return new ResponseEntity<>(pokemonService.save(pokemonI), HttpStatus.CREATED);
+
+    }
+
+
+    @GetMapping("/act/{id}")
+    public ResponseEntity<PokemonI>update(@PathVariable ("id")int pokemonid, @RequestBody PokemonI pokemonI){
+       return pokemonService.getPokemon(pokemonid)
+               .map(pokemonI1 -> new ResponseEntity<>(pokemonService.save(pokemonI),HttpStatus.OK))
+               .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
 
