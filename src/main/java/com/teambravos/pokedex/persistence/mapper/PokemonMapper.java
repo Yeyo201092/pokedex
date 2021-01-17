@@ -30,7 +30,7 @@ public interface PokemonMapper {
             @Mapping(source = "tipo",target = "type"),
             @Mapping(source = "habilidades",target = "abilities"),
             @Mapping(source = "habilidadesEspeciales",target = "specialAbilities"),
-            @Mapping(source = "evolucion",target = "evolution"),
+
             @Mapping(source = "imagen",target = "image"),
 
 
@@ -57,7 +57,9 @@ public interface PokemonMapper {
      * @param pokemon
      *
      */
+
     @InheritInverseConfiguration
+    @Mapping(target = "evolucion", ignore = true)
     Pokemon toPokemon(PokemonI pokemon);
 
 

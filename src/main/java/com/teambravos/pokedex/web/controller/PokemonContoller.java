@@ -76,6 +76,11 @@ public class PokemonContoller {
     }
 
 
+    @PostMapping("update/{id}")
+    public ResponseEntity<PokemonI> update2(@PathVariable("id") int pokemonId, @RequestBody PokemonI pokemonI){
+        return new ResponseEntity<>(pokemonService.save(pokemonI),HttpStatus.OK);
+    }
+
     @GetMapping("/act/{id}")
     @ApiOperation("Update a pokemon")
     @ApiResponses({
