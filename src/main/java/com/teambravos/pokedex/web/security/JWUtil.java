@@ -6,17 +6,22 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.security.Key;
 import java.util.Date;
 
 @Component
+
+/**
+ * La clase JWTutil Funcionara como generador de de el jwt para su posteriror uso dentro de la api
+ *
+ *
+ * @Author Luis alberto Vazquez
+ * @since 14/01/2021
+ */
 public class JWUtil {
 
-<<<<<<< HEAD
+
     private static final String  KEY = "pokemos";
-=======
-        private static final String  key= "pokemon";
->>>>>>> 7f54459debb42763fc97cb759d20927c3b88507f
+
 
     public String generateToken(UserDetails userDetails){
         return Jwts.builder().setSubject(userDetails.getUsername()).setIssuedAt(new Date())
@@ -28,15 +33,13 @@ public class JWUtil {
         return userDetails.getUsername().equals(extractUsername(token)) && !isTokenExpired(token);
     }
 
-<<<<<<< HEAD
+
     public String extractUsername(String token){
         return getClaims(token).getSubject();
     }
-=======
-        public boolean validarToken(String token, UserDetails userDetails){
-            return userDetails.getUsername().equals(extraerUsuario(token)) && !tokenexpirado(token);
-        }
->>>>>>> 7f54459debb42763fc97cb759d20927c3b88507f
+
+
+
 
     public boolean isTokenExpired(String token){
         return  getClaims(token).getExpiration().before(new Date());

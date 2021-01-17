@@ -13,6 +13,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ *Contraseña y usuario para poder accerder a la api
+ *
+ *
+ * @author Luis Alberto
+ * @since   16-01-2021
+ *
+ **/
+
+
 @Service
 public class PokemonUserService implements UserDetailsService {
 

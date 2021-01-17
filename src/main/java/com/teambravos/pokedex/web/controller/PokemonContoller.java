@@ -56,8 +56,13 @@ public class PokemonContoller {
         }
     }
 
-<<<<<<< HEAD
+
     @PostMapping("/save")
+    @ApiOperation("Save a new pokemon")
+    @ApiResponses({
+        @ApiResponse(code = 200, message = "Save"),
+        @ApiResponse(code =400, message = "Some data empty"),
+    })
     public  ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemonI){
         return new ResponseEntity<>(pokemonService.save(pokemonI), HttpStatus.CREATED);
 
@@ -65,18 +70,16 @@ public class PokemonContoller {
 
 
     @GetMapping("/act/{id}")
+    @ApiOperation("Update a pokemon")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "update the pokemon"),
+            @ApiResponse(code = 400, message = "Pokemon Not Found")
+    })
     public ResponseEntity<PokemonI>update(@PathVariable ("id")int pokemonid, @RequestBody PokemonI pokemonI){
        return pokemonService.getPokemon(pokemonid)
                .map(pokemonI1 -> new ResponseEntity<>(pokemonService.save(pokemonI),HttpStatus.OK))
                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-=======
 
-    @PostMapping("/save")
-    @ApiOperation("Delete a Pokemon with an Id")
-    @ApiResponse(code = 201,message = "created")
-    public ResponseEntity<PokemonI> save(@RequestBody PokemonI pokemon) {
-        return new ResponseEntity<>(pokemonService.save(pokemon), HttpStatus.CREATED);
->>>>>>> 7f54459debb42763fc97cb759d20927c3b88507f
     }
 }
 

@@ -13,6 +13,15 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
+
+/**
+ * En la clase security config se llevara a cabo toda la configuracion
+ * accerca de la utenticacion del usuario y el jwt
+ *
+ *
+ * @author: Luis alberto Vazquez
+ * @since: 14/01/2021
+ */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
