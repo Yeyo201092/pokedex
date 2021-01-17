@@ -15,7 +15,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ *
+ *  PokemonController registra todas las peticiones HTTP que realizamos en la aplicación para el CRUD de pokemon
+ *
+ * @author Valeria Esquivel
+ * @autor Luis Alberto Vazquez
+ * @since 13/01/2021
+ */
 @RestController
 @RequestMapping("/pokemons")
 public class PokemonContoller {

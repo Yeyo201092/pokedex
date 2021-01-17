@@ -18,6 +18,7 @@ import java.util.Optional;
  *
  *
  * @author Luis Alberto
+ * @author Valeria Esquivel
  * @since   16-01-2021
  *
  **/
@@ -34,6 +35,7 @@ public class PokemonUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Usuario> userDb = usuarioCrudRepository.findByUsuario(username);
         if (userDb.isPresent()) {
+
             Usuario user = userDb.get();
             return new User(username,"{noop}"+user.getContraseña(), new ArrayList<>());
         }else {

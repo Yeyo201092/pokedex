@@ -1,7 +1,14 @@
 package com.teambravos.pokedex.persistence.entity;
 
 import javax.persistence.*;
-
+/**
+ *
+ * Usuario es la entidad principal utilizada para el login de la aplicacion
+ *
+ *
+ * @author valeria Esquivel
+ * @since   16-01-2021
+ */
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
