@@ -23,6 +23,7 @@ public class JWUtil {
     private static final String  KEY = "pokemos";
 
 
+
     public String generateToken(UserDetails userDetails){
         return Jwts.builder().setSubject(userDetails.getUsername()).setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis()+1000*60*60*10))

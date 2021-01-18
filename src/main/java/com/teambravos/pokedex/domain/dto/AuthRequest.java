@@ -12,6 +12,7 @@ package com.teambravos.pokedex.domain.dto;
 
 public class AuthRequest {
 
+
     private String username;
     private String password;
 

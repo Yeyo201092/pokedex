@@ -36,6 +36,7 @@ public class PokemonUserService implements UserDetailsService {
         Optional<Usuario> userDb = usuarioCrudRepository.findByUsuario(username);
         if (userDb.isPresent()) {
 
+
             Usuario user = userDb.get();
             return new User(username,"{noop}"+user.getContraseña(), new ArrayList<>());
         }else {
