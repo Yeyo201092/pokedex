@@ -24,6 +24,7 @@ import java.util.Optional;
  * @since 13/01/2021
  */
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/pokemons")
 public class PokemonContoller {
 
