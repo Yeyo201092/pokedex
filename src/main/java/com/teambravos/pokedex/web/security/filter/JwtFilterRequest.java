@@ -4,10 +4,8 @@ import com.teambravos.pokedex.domain.service.PokemonUserService;
 import com.teambravos.pokedex.web.security.JWUtil;
 import com.teambravos.pokedex.web.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -18,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class JwtFilterRequest extends OncePerRequestFilter {
-
+public class JwtFilterRequest  {
+/*
     @Autowired
     private JWUtil jwtUtil;
 
@@ -51,4 +49,7 @@ public class JwtFilterRequest extends OncePerRequestFilter {
 
         filterChain.doFilter(request,response);
     }
+
+
+ */
 }
