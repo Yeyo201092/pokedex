@@ -4,15 +4,7 @@ import com.teambravos.pokedex.domain.service.PokemonUserService;
 import com.teambravos.pokedex.web.security.filter.JwtFilterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@EnableWebSecurity
 
 /**
  * En la clase security config se llevara a cabo toda la configuracion
@@ -22,8 +14,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * @author: Luis alberto Vazquez
  * @since: 14/01/2021
  */
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
+public class SecurityConfig {
+/*
 
 
     @Autowired
@@ -37,11 +29,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(pokemonUserService);
     }
 
+*/
 
+    /*
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate").permitAll()
+        http.csrf().disable().authorizeRequests().antMatchers("*//**//*authenticate").permitAll()
                 .anyRequest().authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
@@ -55,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+    */
 
 
 }

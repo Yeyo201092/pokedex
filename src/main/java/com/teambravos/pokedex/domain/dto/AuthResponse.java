@@ -11,7 +11,7 @@ package com.teambravos.pokedex.domain.dto;
 
 
 public class AuthResponse {
-    private String jwt;
+  /*  private String jwt;
 
 
     public AuthResponse(String jwt) {
@@ -24,5 +24,5 @@ public class AuthResponse {
 
     public void setJwt(String jwt) {
         this.jwt = jwt;
-    }
+    }*/
 }
